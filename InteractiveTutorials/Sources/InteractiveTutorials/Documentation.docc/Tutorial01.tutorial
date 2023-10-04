@@ -1,0 +1,43 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Tutorials作成の準備") {
+        ここではDocCを利用してInteractive Tutorialsを作成していく為に最低限必要な知識を紹介します。
+        より詳細な内容やAPI Documentationの作り方などを知りたい方は[公式のドキュメント](https://developer.apple.com/documentation/docc)を参照ください。
+    }
+    
+    @Section(title: "Interactive Tutorialsを作成するには") {
+        @ContentAndMedia {
+            Tutorialsを作成して公開する流れを紹介します。
+            
+            先にリポジトリを作成するなど順序は多少前後しても問題ないですが、基本的にはTutorialsを作成して公開する流れになります。
+            
+            このチュートリアルでは「Tutorialsの作成」と「Tutorialsの公開」にChapterが分かれていますので必要に応じてChapterを見てください。
+            
+            @Image(source: Tutorial01-03, alt: "")
+        }
+    }
+    
+    @Section(title: "Tutorials作成の流れ") {
+        @ContentAndMedia {
+            まずTutorials作成の流れです。
+            - .doccファイルを作成する
+            - Tutorial Table of Contents Fileで目次を作成する
+            - Tutorial Fileでチュートリアルページを作成する
+            
+            @Image(source: ChapterImage02, alt: "")
+        }
+    }
+    
+    
+    @Section(title: "Tutorialsを公開する流れ") {
+        @ContentAndMedia {
+            続いてTutorialsを公開する流れです。
+            - GitHubにGitHub Pagesで静的ページが公開できる状態にする
+            - 作成したTutorialsから.docsファイルを作成する
+            - 全てリポジトリへアップする
+            
+            以上です。
+            
+            @Image(source: ChapterImage03, alt: "")
+        }
+    }
+}

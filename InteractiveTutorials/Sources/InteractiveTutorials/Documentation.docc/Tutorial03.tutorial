@@ -1,0 +1,73 @@
+@Tutorial(time: 20) {
+    @Intro(title: "チュートリアルを公開する") {
+        最後にここまでに作ったチュートリアルを公開する方法を紹介します。
+        公開に必要な項目は以下の通りです。
+        - チュートリアルを公開するリポジトリ作成
+        - GitHub Pagesの設定
+        - swift-docc-pluginのインストール
+        - docsファイル作成
+        - リポジトリに全てアップする
+        
+        この内以下の項目を本チュートリアルでは行います。
+        - GitHub Pagesの設定
+        - swift-docc-pluginのインストール
+        - docsファイル作成
+    }
+    
+    @Section(title: "GitHub Pagesで公開する") {
+        @ContentAndMedia {
+            このセクションでは
+            - GitHub Pagesの設定
+            - docsファイル作成
+            を行なっていきますのでリポジトリの作成がまだの方は先に作成してください。
+            またアカウントの状況によっては（無料枠や有料、Enterpriseなど）条件が違いますのでそれぞれご確認いただければと思いますが、無料枠の場合リポジトリを「public」にしておく必要があります。
+    
+        }
+        
+        @Steps {
+            @Step {
+                GitHub Pagesの設定を行います。
+                
+                リポジトリより「Settings」→「Pages」→「Branch」を「main」、「/docs」としてSaveをクリックしてGitHub Pagesで静的ページを参照できるディレクトリを保存しておきます。
+                ※URLが発行されまで1時間〜2時間ほどかかります。発行されると「Settings」→「Pages」の画面でURLを確認する事ができます。
+                
+                @Image(source: Tutorial03-01, alt: "")
+            }
+            
+            @Step {
+                続いてswift-docc-pluginをインストールする為に
+                Package.swiftのdependenciesに追加します。
+                
+                @Code(name: "Package.swift", file: Chapter03-01-01.swift)
+            }
+            
+            @Step {
+                dependenciesに.package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0")を追加します。
+                
+                @Code(name: "Package.swift", file: Chapter03-01-02.swift)
+            }
+            
+            @Step {
+                続いてdocsファイルを作成します。
+                ターミナルを起動してSwift Packageのルートから次のコマンドを実行します。
+                
+                ファイルの構造によっては一部コマンドを修正する必要があります。詳細は[こちら](https://apple.github.io/swift-docc-plugin/documentation/swiftdoccplugin/publishing-to-github-pages/#Generating-the-Documentation-Site)を参照ください。
+                
+                @Code(name: "Package.swift", file: Chapter03-01-03.swift)
+            }
+            
+            @Step {
+                無事生成されるとdocsファイルが生成されている事が確認できますのでリポジトリにプッシュします。
+                
+                @Image(source: Tutorial03-02, alt: "")
+            }
+            
+            @Step {
+                GitHub PagesのURLが発行され、生成されたdocsファイルがアップされいる状態で
+                https://[アカウント名].github.io/[リポジトリ名]/[tutorials]/[目次ファイル名]/を叩くと確認する事ができます。
+                
+                @Image(source: Tutorial03-03, alt: "")
+            }
+        }
+    }
+}

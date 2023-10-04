@@ -1,0 +1,143 @@
+@Tutorial(time: 30) {
+    @Intro(title: "チュートリアルを作成する") {
+        ここではチュートリアルを実際に作成してきます。
+        
+        以下手順です。詳細は各セクションに記載しています。
+        
+        1. .doccファイルを作成する
+        2. Tutorial Table of Contents Fileで目次を作成する
+        3. Tutorial Fileでチュートリアルページを作成する
+        4. 作成したチュートリアルページを目次で表示する 
+    }
+    
+    @Section(title: ".doccファイルを作成する") {
+        @ContentAndMedia {
+            既存のプロジェクト内に作成する方は特に必要ないですが、本セクションでは.doccファイルを作成する前に、新規でチュートリアルのみを作成したい場合はチュートリアルを作成するファイルを新規作成します
+            ファイルはSwift Packageで作成します。その後.doccファイルを作成します。
+            
+            @Image(source: Tutorial02-01-01, alt: "accessible description")
+        }
+        
+        @Steps {
+            @Step {
+                チュートリアルを作成するファイルを新規作成します。
+                本チュートリアルでは「InteractiveTutorials」というファイル名をつけて作成します。
+                
+                @Image(source: Tutorial02-01-02, alt: "accessible description")
+            }
+            @Step {
+                Swift Package内に.doccファイルを作成します。
+                新規作成からDocumentationのセクションにある「Documentation Catalog」を選択します。
+                
+                @Image(source: Tutorial02-01-03, alt: "accessible description")
+            }
+            
+            @Step {
+                追加するとこのようにDocumentation.doccファイルが追加されます。
+
+                @Image(source: Tutorial02-01-04, alt: "accessible description")
+            }
+            @Step {
+                ここで一旦ドキュメントビルドを行い、Documentation.doccが作成され、ビルドできる状態か確認を行います。
+
+                ・「Product」→「Build Documentation」（ショートカット：control + shift + command + D）
+                @Image(source: Tutorial02-01-05, alt: "accessible description")
+            }
+            @Step {
+                ビルドが成功するとドキュメントが立ち上がりドキュメントが表示されます。
+                
+                @Image(source: Tutorial02-01-06, alt: "accessible description")
+            }
+        }
+    }
+    
+    @Section(title: "目次を作る") {
+        @ContentAndMedia {
+            続いて目次を作成します。
+            目次やチュートリアルページは.docc配下に作成します。
+        }
+        
+        @Steps {
+            @Step {
+                Documentation.docc 配下に目次を作成していきます。
+                
+                新規作成からDocumentationのセクションにある「Tutorial Table of Contents File」を選択し
+                「TableOfContents.tutorial」など目次と分かる適当な名前をつけておきます。
+                
+                @Image(source: Tutorial02-02-01, alt: "accessible description")
+            }
+            @Step {
+                デフォルトではこのようなコードが定義されています。
+                後ほど修正しますのでここではデフォルトのままで問題ないです。
+                
+                @Code(name: "TableOfContents", file: Chapter02-02-01.swift)
+            }
+        }
+    }
+    
+    @Section(title: "チュートリアルを作成する") {
+        @ContentAndMedia {
+            つづいてチュートリアルのページを作成します。
+        }
+        
+        @Steps {
+            @Step {
+                新規作成からDocumentationのセクションにある「Tutorial File」を選択します。
+                「Tutorial01.tutorial」などチュートリアルのページである事が分かる適当な名前をつけておきます。
+                
+                @Image(source: Tutorial02-03-01, alt: "accessible description")
+            }
+            @Step {
+                デフォルトのコードです。
+                
+                @Code(name: "Tutorial01.tutorial", file: Chapter02-03-01.swift)
+            }
+            
+            @Step {
+                こんな感じで修正します。
+                
+                差分も表示してくれます。
+
+                @Code(name: "Tutorial01.tutorial", file: Chapter02-03-02.swift)
+            }
+            
+            @Step {
+                また`Resources`に.swiftを2つほど追加します。
+            }
+            
+            @Step {
+                １つ目
+
+                @Code(name: "Tutorial01.swift", file: Chapter02-03-03.swift)
+            }
+            
+            @Step {
+                2つ目
+
+                @Code(name: "Tutorial02.swift", file: Chapter02-03-04.swift)
+            }
+        }
+    }
+    
+    @Section(title: "作成したチュートリアルを目次で表示する") {
+        @ContentAndMedia {
+            最後に目次ファイルを修正して先ほど作成したチュートリアルページを目次に表示させます。
+        }
+        
+        @Steps {
+            @Step {
+                このコードを
+                
+                @Code(name: "TableOfContents.tutorial", file: Chapter02-04-01.swift)
+            }
+            
+            @Step {
+                こんな感じで修正します。
+                
+                修正後ドキュメントビルドを行う事でチュートリアルができている事が確認できると思います。
+
+                @Code(name: "TableOfContents.tutorial", file: Chapter02-04-02.swift)
+            }
+        }
+    }
+}
