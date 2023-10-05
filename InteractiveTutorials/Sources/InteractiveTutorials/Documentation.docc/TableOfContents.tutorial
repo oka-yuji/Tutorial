@@ -1,8 +1,6 @@
 @Tutorials(name: "Tutorials for creating interactive in DocC") {
     @Intro(title: "DocCでInteractive Tutorials") {
         このチュートリアルではDocCを利用してチュートリアルを作成する方法及び公開方法について学ぶ事ができます。
-        
-        # 更新
     
         @Image(source: Top, alt: "accessible description")
     }
