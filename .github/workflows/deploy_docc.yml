@@ -31,6 +31,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+    - name: List Xcode versions
+        run: ls /Applications | grep Xcode
+
       - name: Build DocC
         run: |
           cd InteractiveTutorials
