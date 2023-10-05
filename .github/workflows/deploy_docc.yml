@@ -35,13 +35,13 @@ jobs:
         
       - name: Build DocC
         run: |
-          cd Tutorials
-          swift package --allow-writing-to-directory ./docs \
+          cd InteractiveTutorials
+          swift package --allow-writing-to-directory ../docs \
             generate-documentation --target InteractiveTutorials \
             --disable-indexing \
             --transform-for-static-hosting \
             --hosting-base-path Tutorial \
-            --output-path ./docs
+            --output-path ../docs
           cd ..
           
       - name: Upload artifact
